@@ -1,0 +1,347 @@
+.thankyou-page {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    color: #633c50;
+    background:
+        radial-gradient(ellipse at 50% 45%, #fff4f7 0%, #fce5ee 48%, #f6d5e3 100%);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.thankyou-glow {
+    position: absolute;
+    z-index: -1;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(85px);
+    opacity: .5;
+    pointer-events: none;
+    animation: thankyouGlow 9s ease-in-out infinite alternate;
+}
+
+.glow-one {
+    top: -180px;
+    left: -100px;
+    background: #ffb9d3;
+}
+
+.glow-two {
+    right: -150px;
+    bottom: -180px;
+    background: #d9b5ff;
+    animation-delay: 2s;
+}
+
+.glow-three {
+    top: 35%;
+    left: 40%;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    opacity: .65;
+}
+
+.thankyou-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.thankyou-particle {
+    position: absolute;
+    color: rgba(202, 117, 158, .7);
+    font-size: 17px;
+    opacity: 0;
+    animation: particleFloat 5s ease-in-out infinite;
+}
+
+.thankyou-content {
+    position: relative;
+    z-index: 2;
+    width: min(850px, 92%);
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.thankyou-small-heart {
+    color: #d77da4;
+    font-size: 34px;
+    opacity: 0;
+    transform: scale(.4);
+}
+
+.thankyou-small-heart.show {
+    animation: thankyouHeartPop 1s ease forwards;
+}
+
+.thankyou-topline {
+    margin: 13px 0 28px;
+    color: #a76a86;
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: .9s ease;
+}
+
+.thankyou-topline.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.thankyou-main-text {
+    margin: 0;
+    color: #a84f79;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    opacity: 0;
+    transform: translateY(25px) scale(.97);
+    transition: opacity 1.3s ease, transform 1.3s ease;
+    text-shadow: 0 8px 35px rgba(190, 100, 146, .15);
+}
+
+.thankyou-main-text.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.thankyou-main-text>span:first-child {
+    color: #c06d96;
+    font-style: italic;
+}
+
+.thankyou-heart {
+    display: inline-block;
+    margin-left: 12px;
+    color: #e28eaf;
+    font-size: .65em;
+    animation: thankyouHeartbeat 1.8s ease-in-out infinite;
+}
+
+.thankyou-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 28px auto;
+    color: #d58aaa;
+    opacity: 0;
+    transition: opacity 1.3s ease;
+}
+
+.thankyou-divider.show {
+    opacity: 1;
+}
+
+.thankyou-divider span {
+    width: 75px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d58aaa);
+}
+
+.thankyou-divider span:last-child {
+    transform: rotate(180deg);
+}
+
+.thankyou-description {
+    color: #95677e;
+    font-family: Georgia, serif;
+    font-size: clamp(15px, 2vw, 19px);
+    line-height: 1.8;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.thankyou-description.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.thankyou-last-slide {
+    margin-top: 45px;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.thankyou-last-slide.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.last-slide-sparkle {
+    color: #d18bad;
+    font-size: 22px;
+}
+
+.thankyou-last-slide p {
+    margin: 9px 0 5px;
+    color: #a77b91;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.thankyou-last-slide h2 {
+    margin: 0;
+    color: #a84f79;
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 3.4vw, 38px);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.last-slide-heart {
+    display: inline-block;
+    margin-top: 8px;
+    color: #d77da4;
+    font-size: 25px;
+    animation: thankyouHeartbeat 1.8s ease-in-out infinite;
+}
+
+.thankyou-bottom-text {
+    position: absolute;
+    bottom: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #b17b96;
+    font-size: 9px;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+
+.thankyou-navigation {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.thankyou-navigation button {
+    padding: 11px 19px;
+    border: 1px solid rgba(179, 105, 143, .4);
+    border-radius: 30px;
+    color: #985775;
+    background: rgba(255, 255, 255, .48);
+    backdrop-filter: blur(12px);
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.thankyou-navigation button:hover {
+    background: #fff;
+    box-shadow: 0 5px 22px rgba(179, 105, 143, .18);
+    transform: translateY(-2px);
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(15px) rotate(0);
+    }
+
+    25% {
+        opacity: .8;
+    }
+
+    75% {
+        opacity: .65;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-45px) rotate(25deg);
+    }
+}
+
+@keyframes thankyouGlow {
+    from {
+        transform: scale(.9) translate(-10px, 0);
+    }
+
+    to {
+        transform: scale(1.15) translate(15px, 15px);
+    }
+}
+
+@keyframes thankyouHeartPop {
+    0% {
+        opacity: 0;
+        transform: scale(.4);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes thankyouHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+}
+
+@media (max-width: 600px) {
+    .thankyou-main-text {
+        font-size: clamp(43px, 11vw, 65px);
+        letter-spacing: -1px;
+    }
+
+    .thankyou-topline {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+    }
+
+    .thankyou-description {
+        font-size: 14px;
+    }
+
+    .thankyou-last-slide {
+        margin-top: 32px;
+    }
+
+    .thankyou-bottom-text {
+        bottom: 73px;
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .thankyou-navigation {
+        padding: 0 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .thankyou-page *,
+    .thankyou-page *::before,
+    .thankyou-page *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
